@@ -1,27 +1,28 @@
-/* 1. Faz a página inteira usar Flexbox para colocar os itens lado a lado */
 body {
     display: flex;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; 
+    background-color: rgb(27, 27, 27);
+    color: white;
+    text-align: justify;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* 2. Estiliza a sua aba lateral */
 .abalateral {
-    width: 250px;           /* Largura fixa da barra lateral */
-    height: 100vh;          /* Ocupa a altura total da tela */
-    background-color: black; /* Cor de fundo cinza claro */
-    color: rgb(126, 123, 123);            /* Cor do texto */
+    width: 250px;          
+    height: 100vh;         
+    background-color: black; 
+    color: rgb(126, 123, 123);            
     padding: 20px;
-    border-right: 1px solid white; /* Linha de divisão na lateral */
+    border-right: 1px solid white;
 }
 
-/* 3. Faz o conteúdo principal ocupar o resto da tela */
+
 .conteudo {
-    flex: 1;                /* Ocupa todo o espaço restante */
+    flex: 1;                
     padding: 40px;
 }
 
