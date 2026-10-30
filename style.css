@@ -12,16 +12,18 @@ html {
 }
 
 .abalateral {
+    font-family: 'Playfair Display', serif;
     width: 250px;          
     height: 100vh;         
     background-color: black; 
     color: rgb(126, 123, 123);            
     padding: 20px;
-    border-right: 1px solid white;
+    border-right: 1px solid rgb(145, 0, 0);
 }
 
 
 .conteudo {
+    font-family: 'Libre Baskerville', serif;
     flex: 1;                
     padding: 40px;
 }
@@ -37,4 +39,37 @@ html {
     text-align: center;
     color: rgb(174, 172, 172);
 }
+
+.topics {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 68px;
+    color: rgb(177, 22, 22);
+}
+
+.topicstwo {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 34px;
+    color: rgb(102, 101, 101);
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fontes/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+
+    font-family: 'Cinzel';
+    src: url('fontes/Cinzel/Cinzel-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+
+    font-family: 'Libre Baskerville';
+    src: url('fontes/Libre_Baskerville/LibreBaskerville-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+}
+
+
 
