@@ -1,75 +1,331 @@
-body {
-    display: flex;
-    margin: 0;
-    font-family: Arial, sans-serif; 
-    background-color: rgb(27, 27, 27);
-    color: white;
-    text-align: justify;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.abalateral {
-    font-family: 'Playfair Display', serif;
-    width: 250px;          
-    height: 100vh;         
-    background-color: black; 
-    color: rgb(126, 123, 123);            
-    padding: 20px;
-    border-right: 2px solid rgb(145, 0, 0);
-}
-
-
-.conteudo {
-    font-family: 'Libre Baskerville', serif;
-    flex: 1;                
-    padding: 40px;
-}
-
-.iconepc {
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    height: auto;
-}
-
-.centralizado {
-    text-align: center;
-    color: rgb(174, 172, 172);
-}
-
-.topics {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-    font-size: 68px;
-    color: rgb(177, 22, 22);
-}
-
-.topicstwo {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-    font-size: 34px;
-    color: rgb(102, 101, 101);
+@font-face {
+    font-family: "Playfair Display";
+    src: url("fontes/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Playfair Display';
-    src: url('fontes/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-family: "Playfair Display";
+    src: url("fontes/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
     font-weight: 100 900;
-    font-style: normal;
-
-    font-family: 'Cinzel';
-    src: url('fontes/Cinzel/Cinzel-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400 900;
-    font-style: normal;
-
-    font-family: 'Libre Baskerville';
-    src: url('fontes/Libre_Baskerville/LibreBaskerville-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400 900;
-    font-style: normal;
+    font-style: italic;
+    font-display: swap;
 }
 
+@font-face {
+    font-family: "Cinzel";
+    src: url("fontes/Cinzel/Cinzel-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: "Libre Baskerville";
+    src: url("fontes/Libre_Baskerville/LibreBaskerville-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: "Libre Baskerville";
+    src: url("fontes/Libre_Baskerville/LibreBaskerville-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    background-color: rgb(27, 27, 27);
+    color: #f3f1f1;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.abalateral {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    flex: 0 0 280px;
+    width: 280px;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 24px 18px 32px;
+    background-color: #000;
+    color: rgb(174, 172, 172);
+    border-right: 2px solid rgb(145, 0, 0);
+    scrollbar-color: rgb(145, 0, 0) #111;
+}
+
+.icone {
+    display: block;
+    width: min(100%, 180px);
+    height: auto;
+    margin: 0 auto 16px;
+}
+
+.marca {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(174, 172, 172);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.marca:hover {
+    color: #ff4d4d;
+}
+
+.menu h2 {
+    margin: 28px 12px 10px;
+    color: rgb(196, 194, 194);
+    font-family: "Cinzel", "Times New Roman", serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 0 4px;
+}
+
+.menu a {
+    display: block;
+    padding: 9px 12px;
+    border-left: 3px solid transparent;
+    color: #9a9a9a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: left;
+    text-decoration: none;
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible,
+body:has(#o-que-e:target) .menu a[href="#o-que-e"],
+body:has(#principios:target) .menu a[href="#principios"],
+body:has(#malwares:target) .menu a[href="#malwares"],
+body:has(#criptografia:target) .menu a[href="#criptografia"],
+body:has(#prevencao:target) .menu a[href="#prevencao"],
+body:has(#conscientizacao:target) .menu a[href="#conscientizacao"],
+body:has(#conclusao:target) .menu a[href="#conclusao"],
+body:has(#caminhos:target) .menu a[href="#caminhos"],
+body:has(#rotina:target) .menu a[href="#rotina"],
+body:has(#tabela:target) .menu a[href="#tabela"],
+body:has(#videos:target) .menu a[href="#videos"] {
+    color: #ff4d4d;
+    background-color: rgba(145, 0, 0, 0.18);
+    border-left-color: rgb(145, 0, 0);
+    transform: translateX(4px);
+}
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+    max-width: 920px;
+    padding: 48px 56px 88px;
+}
+
+.conteudo section {
+    scroll-margin-top: 28px;
+}
+
+.conteudo section + section {
+    margin-top: 2.75rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid rgba(145, 0, 0, 0.38);
+}
+
+.conteudo section:target {
+    animation: destaque 1.1s ease;
+}
+
+.conteudo h1,
+.conteudo h2,
+.conteudo h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.conteudo h1 {
+    margin: 0 0 1rem;
+    color: rgb(177, 22, 22);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.3rem, 5vw, 3.7rem);
+    letter-spacing: -0.02em;
+}
+
+.conteudo h2 {
+    margin: 0 0 0.9rem;
+    color: #d7d5d5;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+    font-weight: 500;
+}
+
+.conteudo h3 {
+    margin: 1.8rem 0 0.7rem;
+    color: #c4b8b8;
+    font-family: "Cinzel", "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.conteudo p,
+.conteudo li {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.conteudo strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+.conteudo ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+.conteudo li::marker {
+    color: rgb(177, 22, 22);
+}
+
+.conteudo table {
+    width: 100%;
+    margin: 0.5rem 0 0;
+    border-collapse: collapse;
+    font-size: 1rem;
+    line-height: 1.45;
+    text-align: left;
+}
+
+.conteudo caption {
+    margin-bottom: 0.85rem;
+    color: #c8c6c6;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 0.98rem;
+    font-style: italic;
+    text-align: left;
+    caption-side: bottom;
+    padding-top: 0.75rem;
+}
+
+.conteudo th,
+.conteudo td {
+    padding: 0.9rem 1rem;
+    border: 1px solid #555;
+}
+
+.conteudo thead th {
+    background-color: #141414;
+    color: #f2f2f2;
+    font-family: "Cinzel", "Times New Roman", serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.conteudo tbody th {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.conteudo tbody tr:nth-child(even) {
+    background-color: rgb(67, 64, 64);
+}
+
+.video {
+    margin-top: 1.25rem;
+}
+
+.video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+@keyframes destaque {
+    from {
+        background-color: rgba(145, 0, 0, 0.2);
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .abalateral {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        border-right: 0;
+        border-bottom: 2px solid rgb(145, 0, 0);
+    }
+
+    .conteudo {
+        padding: 32px 20px 64px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .conteudo section:target {
+        animation: none;
+    }
+
+    .menu a {
+        transition: none;
+    }
+}
